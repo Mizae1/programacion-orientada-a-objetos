@@ -1,0 +1,67 @@
+import java.nio.channels.GatheringByteChannel;
+
+public class MyDateTime extends MyDate{
+	
+	protected int second;
+	protected int minutes;
+	protected int hours;
+	
+	public MyDateTime(int hh, int mi, int ss, int dd, int mm, int yy ){
+		super(dd, mm, yy);
+		setHours(hh);
+		setMinutes(mi);
+		setSeconds(ss);
+		
+	}
+	
+	public MyDateTime(int hh, int mi, int ss){
+		
+	}
+	
+	public MyDateTime(){
+		
+	}
+
+	public int getSecond() {
+		return second;
+	}
+
+	public void setSeconds(int ss) {
+		this.second = ss;
+	}
+
+	public int getMinutes() {
+		return minutes;
+	}
+
+	public void setMinutes(int mi) {
+		this.minutes = mi;
+	}
+
+	public int getHours() {
+		return hours;
+	}
+
+	public void setHours(int hh) {
+		this.hours = hh;
+	}
+
+	@Override
+	public String toString() {
+		return "MyDateTime [second=" + second + ", minutes=" + minutes + ", hours=" + hours + "]";
+	}
+	
+	public boolean equals (Object o){
+		if(! (o instanceof MyDateTime)) return false;
+		
+		MyDateTime a = (MyDateTime) o ;
+		
+		return getFormat() == a.getFormat() && getYear() == a.getYear() && getMonth() == a.getMonth() && getDay() == a.getDay() && getHours() == a.getHours() && getMinutes() == a.getMinutes() && getSecond() == a.getSecond();
+	}
+	
+	public MyDateTime clone(){
+		return new MyDateTime (getFormat(), getYear(), getMonth(), getDay(), getHours(), getMinutes(), getSecond();
+	}
+	
+
+}
