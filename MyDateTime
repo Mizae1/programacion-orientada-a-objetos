@@ -27,14 +27,22 @@ public class MyDateTime extends MyDate{
 	}
 
 	public void setSeconds(int ss) {
+		if(ss < 0 && ss>60){
+			ss = 0;
+		}
+		
 		this.second = ss;
 	}
 
 	public int getMinutes() {
+		
 		return minutes;
 	}
 
 	public void setMinutes(int mi) {
+		if(mi < 0 && mi>60){
+			mi = 0;
+		}
 		this.minutes = mi;
 	}
 
@@ -43,6 +51,9 @@ public class MyDateTime extends MyDate{
 	}
 
 	public void setHours(int hh) {
+		if(hh < 0 && hh>60){
+			hh = 0;
+		}
 		this.hours = hh;
 	}
 
@@ -56,12 +67,13 @@ public class MyDateTime extends MyDate{
 		
 		MyDateTime a = (MyDateTime) o ;
 		
-	return  getYear() == a.getYear() && getMonth() == a.getMonth() && getDay() == a.getDay() && getHours() == a.getHours() && getMinutes() == a.getMinutes() && getSecond() == a.getSecond();
+		return  getYear() == a.getYear() && getMonth() == a.getMonth() && getDay() == a.getDay() && getHours() == a.getHours() && getMinutes() == a.getMinutes() && getSecond() == a.getSecond();
 	}
 	
 	public MyDateTime clone(){
 		return new MyDateTime (getHours(), getMinutes(), getSecond(), getDay(), getMonth(), getYear());
 	}
+	
 	
 
 }
