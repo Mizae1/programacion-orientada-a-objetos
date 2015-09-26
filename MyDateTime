@@ -28,7 +28,7 @@ public class MyDateTime extends MyDate{
 
 	public void setSeconds(int ss) {
 		if(ss < 0 && ss>60){
-			ss = 0;
+			ss = 1;
 		}
 		
 		this.second = ss;
@@ -41,7 +41,7 @@ public class MyDateTime extends MyDate{
 
 	public void setMinutes(int mi) {
 		if(mi < 0 && mi>60){
-			mi = 0;
+			mi = 1;
 		}
 		this.minutes = mi;
 	}
@@ -52,7 +52,7 @@ public class MyDateTime extends MyDate{
 
 	public void setHours(int hh) {
 		if(hh < 0 && hh>60){
-			hh = 0;
+			hh = 1;
 		}
 		this.hours = hh;
 	}
