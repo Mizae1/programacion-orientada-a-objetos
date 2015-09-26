@@ -57,11 +57,6 @@ public class MyDateTime extends MyDate{
 		this.hours = hh;
 	}
 
-	@Override
-	public String toString() {
-		return "MyDateTime [second=" + second + ", minutes=" + minutes + ", hours=" + hours + "]";
-	}
-	
 	public boolean equals (Object o){
 		if(! (o instanceof MyDateTime)) return false;
 		
@@ -74,6 +69,13 @@ public class MyDateTime extends MyDate{
 		return new MyDateTime (getHours(), getMinutes(), getSecond(), getDay(), getMonth(), getYear());
 	}
 	
+	public MyDate toDate(){
+		return new MyDate(getYear(), getMonth(), getDay());
+		
+	}
 	
+	public String toString() {
+		return super.toString() + ("second=" + second + ", minutes=" + minutes + ", hours=" + hours);
+	}
 
 }
