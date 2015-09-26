@@ -92,5 +92,6 @@ public class MyDateTime extends MyDate{
 		}else if(segundos < 60 && minutos < 60){
 			segundos = segundos + 1;
 			minutos = minutos + 1;
+			super.next();
 		}
 	}
