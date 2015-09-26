@@ -56,11 +56,11 @@ public class MyDateTime extends MyDate{
 		
 		MyDateTime a = (MyDateTime) o ;
 		
-		return getFormat() == a.getFormat() && getYear() == a.getYear() && getMonth() == a.getMonth() && getDay() == a.getDay() && getHours() == a.getHours() && getMinutes() == a.getMinutes() && getSecond() == a.getSecond();
+	return  getYear() == a.getYear() && getMonth() == a.getMonth() && getDay() == a.getDay() && getHours() == a.getHours() && getMinutes() == a.getMinutes() && getSecond() == a.getSecond();
 	}
 	
 	public MyDateTime clone(){
-		return new MyDateTime (getFormat(), getYear(), getMonth(), getDay(), getHours(), getMinutes(), getSecond();
+		return new MyDateTime (getHours(), getMinutes(), getSecond(), getDay(), getMonth(), getYear());
 	}
 	
 
